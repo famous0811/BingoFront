@@ -1,7 +1,9 @@
 import React from "react"
+import Modal from "../UI/Modal"
+import Input, { WrapInput } from "../UI/Input"
 
-function createMOdal() {
-  return <div></div>
+function CreateModal() {
+  return <Modal modalName="create"></Modal>
 }
 
-export default createMOdal
+export default CreateModal

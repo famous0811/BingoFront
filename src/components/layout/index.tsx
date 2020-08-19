@@ -40,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
 body {
     margin: 0;
     transition: background 0.5s, color 0.5s;
+    overflow: hidden;
 }
 * {
       font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Noto Sans KR', sans-serif;

@@ -10,7 +10,11 @@ function index() {
       <Route path="/" exact component={Indexpage} />
       <Route path="/signup" exact component={signupage} />
       {/* <Route path="/login" exact component={} />  로그인 모달*/}
-      <Route path="/create" exact component={createpage} />
+      <Route
+        path="/create/:size/:name/:category"
+        exact
+        component={createpage}
+      />
       <Route path="/reads" exact component={readspage} />
       {/* <Route path="/read/:id" exact component={} />빙고 모달 */}
     </Switch>

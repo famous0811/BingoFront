@@ -4,22 +4,26 @@ import UISwitch from "../UI/Switch"
 import { RootState } from "../../store/reducers"
 import { useSelector } from "react-redux"
 import Bingo from "../UI/bingo"
+import { conItems } from "../../store/slices/bingo"
+import { Console } from "console"
 
 interface bingolistProps {
   flex?: boolean
 }
 interface bingospace {
   name: string
-  contents: string[]
+  contents: conItems[]
   size: number
 }
 function BingoSpace({ name, contents, size }: bingospace) {
+  // console.log(contents)
+
   return (
     <BingoWrap>
-      <div style={{ maxWidth: "30px", maxHeight: "30px" }}>
-        <Bingo contents={contents} size={size} />
-      </div>
       {name}
+      <div style={{ maxWidth: "30px", maxHeight: "30px" }}>
+        <Bingo content={contents} size={size} />
+      </div>
     </BingoWrap>
   )
 }
@@ -27,9 +31,9 @@ function Bingolist({ flex }: bingolistProps) {
   const [Bingos, setBingos] = useState(
     useSelector((state: RootState) => state.bingo),
   )
-
+  console.log(Bingos)
   return (
-    <Wrap flex>
+    <Wrap>
       {Bingos.map((data) => (
         <BingoSpace
           key={data.id}
@@ -45,11 +49,13 @@ const BingoWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /*align-items: center; */
 `
 
 const Wrap = styled.div<bingolistProps>`
   display: grid;
+  grid-template-rows: repeat(5, 150px);
+  grid-template-columns: repeat(5, 150px);
   ${({ flex }) =>
     flex &&
     css`

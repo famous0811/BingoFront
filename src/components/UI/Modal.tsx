@@ -13,7 +13,7 @@ function Modal({ children, modalName }: ModalProps) {
   const { isOpen, close } = useModal(modalName)
   const theme = useTheme()
   const location = useLocation()
-  console.log("login : " + isOpen.show)
+  // console.log("login : " + isOpen.show)
 
   useEffect(() => {
     close()
